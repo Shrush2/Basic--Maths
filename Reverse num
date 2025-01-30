@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        
+        int rev =0;
+        while(num > 0){
+            int ld = num % 10;
+            num = num / 10;
+            rev = (rev *10)+ld;
+        }
+        System.out.println("reverse digit in num "+rev);
+    }
+}
+1234578
+reverse digit in num 8754321
