@@ -1,0 +1,24 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int dup = num;
+        int rev =0;
+        while(num > 0){
+            int ld = num % 10;
+            num = num / 10;
+            rev = (rev *10)+ld;
+        }
+        if(dup == rev){
+        System.out.println("the given num is pallindrome");
+        } else{
+        System.out.println("the number is not pallindrome");
+     
+        }
+    }
+}
+112211
+the given num is pallindrome
