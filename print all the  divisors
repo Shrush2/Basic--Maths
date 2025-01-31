@@ -6,10 +6,13 @@ class Main {
         int n = sc.nextInt();
         
         for(int i=1;i <= Math.sqrt(n);i++){
+        // Loop through numbers from 1 to sqrt(n)
+
             if(n % i == 0){
          System.out.print(i +" ");       
             }
-            if(n/i != i){
+        // Avoid printing the square root twice
+                 if(n/i != i){
             System.out.print(n/i+" ");
             }
         }
