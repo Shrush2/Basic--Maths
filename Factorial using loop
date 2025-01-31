@@ -1,0 +1,22 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+    
+              System.out.print(" factorial of num is :"+factorial(num));
+   
+}
+      
+    public static long factorial(int num){
+        long fact =1;
+         for(int i=1;i <= num;i++){
+             fact *= i;
+         }
+         return fact;
+         
+    } 
+}
+---->  4
+ factorial of num is :24
