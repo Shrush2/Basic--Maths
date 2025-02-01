@@ -1,0 +1,15 @@
+
+class Main {
+    public static void main(String[] args) {
+        fibo(10);
+    }
+    public static void fibo(int n){
+        int firstnum=0,secondnum=1,nextnum =0;
+        for(int i=1;i<=n;i++){
+         System.out.println(firstnum+" ");
+         nextnum = firstnum+secondnum;
+         firstnum=secondnum;
+         secondnum = nextnum;
+        }
+    }
+}
