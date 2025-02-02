@@ -1,5 +1,4 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+========================= Reverse num =================
 import java.util.*;
 class Main {
     public static void main(String[] args) {
@@ -17,3 +16,28 @@ class Main {
 }
 1234578
 reverse digit in num 8754321
+
+
+
+============================Sum of Digits ===========================
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int  num = sc.nextInt();
+        
+       SumofDig(num);
+ }
+    public static void SumofDig(int num){
+         int sum = 0;
+        while(num > 0){
+        int ld = num %10;
+        num = num /10;   
+        sum +=ld;
+
+        }
+      System.out.println("Sum of Digits "+sum);
+       
+}
+}
