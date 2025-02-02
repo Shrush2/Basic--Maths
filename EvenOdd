@@ -1,4 +1,4 @@
-
+==================EvenOdd==================================
 import java.util.*;
 class Main {
     public static void main(String[] args) {
@@ -13,6 +13,27 @@ class Main {
         }else{
             System.out.println("Odd");
         }
+       
+}
+}
+
+========================LEAP year or not ==================================
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int  year = sc.nextInt();
+        
+       leap_year(year);
+ }
+    public static void leap_year(int year){
+     if(year % 400 ==0||(year % 4 == 0 && year %100 != 0)){
+         System.out.println("Given year "+year+ " is leap  year ");
+     }else{
+          System.out.println("Given year "+year+ " is not leap  year ");
+     }
+     
        
 }
 }
