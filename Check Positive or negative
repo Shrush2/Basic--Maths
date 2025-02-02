@@ -1,0 +1,19 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int  n = sc.nextInt();
+        positiveorNegative(n);
+ }
+    public static void positiveorNegative(int n){
+     
+         if(n== 0){
+           System.out.println("ZERO");
+        }else{
+            String res = n > 0 ? "postive" : "negative";
+            System.out.println(res);
+        }
+       
+}
+}
