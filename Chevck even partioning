@@ -15,3 +15,6 @@ You are given a positive integer ‘N’. You have to check whether ‘N’ can 
 
 For example:
 If the given number is 6, The number 6 can be represented as 2 + 4, and both 2 and 4 are even numbers. Hence the answer is “YES”.
+
+
+Note :- N = 2: Can't write 2 as the sum of two even numbers (you'd need 0, which is not allowed by problem constraints — "positive integers").
