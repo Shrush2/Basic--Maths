@@ -1,0 +1,39 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int countSpecialNumbers(int n) {
+        
+        int cnt = 0;
+        for(int i = 1; i <= n; i++){
+            if(isSpecial(i)){
+                cnt++;
+            }
+
+        }
+        return cnt;
+    }
+     
+     public static Boolean isSpecial(int n){
+
+         while(n > 0){
+             int digit = n % 10;
+
+             if(digit < 1 || digit > 5){
+                 return false;
+             }
+             n /= 10;
+         }
+         return true;
+     }
+
+}
+
+A positive integer is called a Special Number if all the digits in its decimal representation lie between 1 to 5 (both inclusive). For example : 245, 312, etc. are some special numbers,
+whereas 340, 17, 0, etc. are some non-special numbers.
+
+Given an integer 'N' . Your task is to find how many special numbers lie between 1 to N.
+
+Special Number :- You are given a number N, and you need to count how many "special numbers" lie between 1 and N inclusive. 
+
+T.C => O(n * log(N))
+S.C => O(1)
