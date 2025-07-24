@@ -1,0 +1,36 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static boolean reorderedPowerOf2(int n) {
+
+		Set<String> powerset2 = new HashSet<>();
+
+		for(int i = 0; i <= 31;i++){
+			int pow = 1 << i;
+			String sorted = sortDigits(pow);
+			powerset2.add(sorted);
+			
+		}
+		String digits = sortDigits(n);
+		return powerset2.contains(digits);
+
+	}
+
+	public static String sortDigits(int n){
+		char arr[] = String.valueOf(n).toCharArray();
+		Arrays.sort(arr);
+		return new String(arr);
+	}
+}
+
+
+You are given an integer ‘N’. We can reorder the digits in any order (including the original order) such that the leading digit is not zero.
+Return true if and only if we can do this so that the resulting number is a power of two. Else, return false.
+
+For Example :
+Given :-
+‘N’ = 218
+Then the answer will be true because it can be rearranged to 128, which is 2 raised to the power of 7.
+
+T.C => O(1), we use constant time O(31) to sort and process;
+S.C => O(1),we use constant space set O(31) to store the power of 2 from 0 to 30;
