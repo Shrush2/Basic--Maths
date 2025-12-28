@@ -1,0 +1,60 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static String smallestNumber(Integer n, Integer k) {
+        // Write your code here.
+
+        if(k == 0){
+          if(n == 1){
+              return "0";
+          }else{
+            return "-1";
+        }
+        }
+
+        if(k > 9 * n ){
+            return "-1";
+        }
+
+        int digit[] = new int[n];
+        int remainigSum = k;
+         digit[0] = 1;
+         remainigSum -= 1;
+
+
+        for(int i = n-1; i >= 1 ; i--){
+
+            if(remainigSum > 9){
+                digit[i] = 9;
+               remainigSum -= 9;
+            }else{
+                digit[i] = remainigSum;
+                remainigSum = 0;
+            }
+
+        }
+
+        digit[0] = digit[0] + remainigSum;
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < digit.length; i++){
+            sb.append(digit[i]);
+        }
+        return sb.toString();
+    }
+}
+
+You are given two positive integers ‘N’ and ‘K’. Your task is to find the smallest ‘N’ digit number whose sum of digits equals ‘K’. If no such number exists then you need to print -1.
+
+
+Quick Dry Run (n = 3, k = 10)
+digit = [1, 0, 0]
+remainingSum = 9
+
+i = 2 → digit[2] = 9
+remainingSum = 0
+
+i = 1 → digit[1] = 0
+
+digit[0] += 0 → [1, 0, 9]
+
+✅ Output: 109
