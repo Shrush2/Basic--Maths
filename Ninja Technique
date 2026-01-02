@@ -1,0 +1,53 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static boolean ninjaTechnique(String str)
+    {
+
+        int n = str.length();
+
+        for(int i = 0; i < n; i++){
+            for(int len = 1; len <= 9; len++){
+                if(i+len > n){
+                     break;
+                } 
+
+                String subst = str.substring(i,i+len);
+                long X = Long.parseLong(subst);
+
+                if(X == 0){
+                     continue;
+                } 
+
+                int N = (int)Math.floor(Math.sqrt(X));
+
+                if(N * (N+1) == X){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+
+Ninja has its own technique of making a decision to do something or not. This technique is known as the ninja technique. In this technique, Ninja generates a random string containing only digits,
+and if any substring whose integer value can be defined as the product of two consecutive integers i.e ‘X = N*(N+1)’ then Ninja do that work else didn’t. So now Ninja wants to invest in the stock market 
+so he is using his ninja technique for deciding.
+So your task is to write a code that can check whether the string contains any substring whose integer value can be defined as the product of two consecutive integers. 
+If any substring exists you should return ‘True’else return‘False’.
+
+Note :
+
+Substring with integer value ‘0’is not considered as special and check only for integers up to length ‘9’as beyond ‘9’integer can’t hold values.
+Example :
+
+For the string ‘1242’ we return ‘True’ as for substring:
+‘12’ we can be defined as the product of two consecutive integers i.e ‘3’ and ‘4’.
+‘2’ we can be defined as the product of two consecutive integers i.e ‘1’ and ‘2’.
+‘42’ can be defined as the product of two consecutive integers i.e ‘6’ and ‘7’.
+ If the string passes the required condition we have to return ‘True’ else we have to return ‘False’.  
+
+T.C = O(n)
+S.C => O(1)
