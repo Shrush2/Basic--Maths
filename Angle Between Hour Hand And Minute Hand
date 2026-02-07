@@ -1,0 +1,37 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int findAngle(int hour, int minute) {
+        //Write your code here
+
+        double minAngle = 6 * minute;
+        double hourAngle = 30 * hour + 0.5 * minute;
+
+        double angle = Math.abs(hourAngle - minAngle);
+
+        angle = Math.min(angle,360 - angle);
+
+        return (int)Math.floor(angle);
+    }
+}
+
+Given the time in hours and minutes, you need to calculate the angle between the hour hand and the minute hand.
+Note :
+There can be two angles between the hour hand and minute hand, you need to print a minimum of two. Also, print the floor value of angle i.e. if the angle is 15.2, you need to print 15.
+
+
+
+✅ Logic (Important Formula)
+
+1. Minute hand angle from 12: minuteAngle = 6 × minute
+(Because 360° / 60 = 6° per minute)
+
+2. Hour hand angle from 12:
+hourAngle=30 × hour + 0.5 × minute
+(Because 360° / 12 = 30° per hour and hour hand moves 0.5° per minute)
+
+3. Find difference: angle =  ∣ hourAngle − minuteAngle ∣
+
+4. Take minimum of two angles:  angle=min(angle,360−angle)
+
+5. Return floor value
