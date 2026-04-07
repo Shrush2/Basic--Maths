@@ -1,0 +1,49 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static String toBinaryCalculator(double num) {
+		// Write Your Code here
+
+		if(num <= 0 || num >= 1) return "ERROR";
+
+		StringBuilder binary = new StringBuilder();
+		binary.append("0.");
+
+		while(num > 0){
+
+			if(binary.length() >= 34) return "ERROR";
+
+			num = num * 2;
+
+			if(num >= 1){
+				binary.append("1");
+				num = num - 1;
+			}else{
+				binary.append("0");
+			}
+		}
+		return binary.toString();
+	}
+}
+
+
+Problem statement
+Ninja and his friends go to the park every day. But now, due to his homework, he wasn’t able to go to the park with his friends. So when he figures out,
+he notes that a lot of time is consumed in doing maths homework where he has to convert some real number to a binary string. So he is deciding to build a calculator
+which can convert real numbers to the binary string.
+So help our Ninja to write a code for the calculator, which can convert the real numbers into a binary string and save his time to join his friends in the park.
+So your task is to write a code that can convert real numbers between ‘0’ and ‘1’into a binary string.
+For example, you have given a number “0.750” so you have to convert it in its binary form that is “0.110”
+
+Detailed explanation ( Input/output format, Notes, Images )
+Sample Input 1 :
+2
+0.625
+0.72
+Sample Output 1 :
+0.101
+ERROR
+
+
+T.C => O(N)
+S.C => O(1)
