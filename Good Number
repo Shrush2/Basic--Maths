@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Solution {
+	public static boolean isGoodNumber(int n) {
+
+		Set<Integer> set = new HashSet<>();
+
+		while(n != 1){
+			int sum = 0;
+			if(set.contains(n)){
+				return false;
+			}
+
+			set.add(n);
+
+			while(n > 0){
+				int ld = n % 10;
+				sum += ld * ld;
+				n /= 10;
+			}
+
+			n = sum;
+		}
+		return true;
+	}
+}
+
+You are given an integer ‘N’, you need to find whether it’s a good number or not.
+We start from the integer ‘N’ and keep replacing the current number with the sum of squares of its digits, we keep repeating this process until we will the number 1. 
+A number that generates the 1 after finite repetition of the above process is called a good number.
+
+Example :
+If ‘N’ = 7,
+
+Then we start with the integer 7 and replace it with (7 * 7) = 49.
+The new number is 49, we replace it with (4 * 4) + (9 * 9) = 97.
+We replace this new number 97 with (9 * 9) + (7 * 7) = 130.
+We replace this new number 130 with (1 * 1) + (3 * 3) + (0 * 0) = 10.
+We replace this new number 10 with (1 * 1) + (0 * 0) = 1.
+
+Therefore, the original number 7 is a good number. 
+
+
+T.C => O(log N)
+S.C => O(log N)
